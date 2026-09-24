@@ -20,7 +20,16 @@ body {
     padding: 40px 0;
     align-items: center;
 }
-
+.burger-btn {
+  display: none;
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
 .header-pictures {
     width: 128px;
     height: 52px;
@@ -873,7 +882,7 @@ body {
     align-items: center;
   }
   body {
-    padding-top: 260px;
+    padding-top: 210px;
   }
 }
 
@@ -886,7 +895,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+  }
+  .nav {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
   .about-title {
     font-size: 30px;
@@ -916,7 +929,7 @@ body {
     justify-content: center;
   }
   body {
-    padding-top: 300px;
+    padding-top: 280px;
   }
 }
 
@@ -924,6 +937,11 @@ body {
 @media (max-width: 767px) {
   .container {
     max-width: 540px;
+  }
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
   .about-container {
     display: flex;
@@ -936,10 +954,8 @@ body {
     padding: 0;
   }
   .trainers-pictures2 {
-    width: 702px;
-    height: 750px;
-  }
-  .questions-container {
+    width: 590px;
+    height: 600px;
   }
   .questions-title {
     font-size: 30px;
@@ -952,8 +968,72 @@ body {
     align-items: center;
   }
   body {
-    padding-top: 300px;
+    padding-top: 130px;
   }
+  .questions-form {
+    padding-right: 80px;
+  }
+
+  .burger-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+    }
+    .burger-line {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background-color: #f4eded;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .header-list {
+        display: none;
+    }
+    .header-list1 {
+      display: none;
+    }
+    .nav.is-open .header-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 16px 20px;
+        background: #033f0b;
+        text-align: center;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+    }
+    .nav.is-open .header-list1 {
+      display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 16px 20px;
+        background: #033f0b;
+        text-align: center;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        padding-top: 100px;
+    }
+    .nav.is-open .burger-line:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .nav.is-open .burger-line:nth-child(2) {
+        opacity: 0;
+    }
+    .nav.is-open .burger-line:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
 }
 
 /* Extra small: 0px (320px) - 575px */
@@ -961,5 +1041,12 @@ body {
   .container {
     max-width: 100%;
     padding: 0 15px;
+  }
+  .trainers-pictures2 {
+    width: 430px;
+    height: 440px;
+  }
+  body {
+    padding-top: 120px;
   }
 }
